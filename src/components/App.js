@@ -10,6 +10,10 @@ export default function App() {
   const [articles, setArticles] = useState([]);
   const [article, setArticle] = useState(null);
   const [writing, setWriting] = useState(false);
+
+  // Anytime dirty is true, then it will trigger the fetch via the useEffect
+  const [dirty, setDirty] = useState(true);
+
   const user = useAuthentication();
 
   // This is a trivial app, so just fetch all the articles only when
@@ -18,9 +22,14 @@ export default function App() {
   // then "setArticles" writes them into the React state.
   useEffect(() => {
     if (user) {
-      fetchArticles().then(setArticles);
+      fetchArticles()
+        .then(setArticles)
+        .then(() => {
+          console.log("FETCHED");
+          setDirty(false);
+        });
     }
-  }, [user]);
+  }, [user, dirty]);
 
   // Update the "database" *then* update the internal React state. These
   // two steps are definitely necessary.
@@ -51,7 +60,7 @@ export default function App() {
       ) : writing ? (
         <ArticleEntry addArticle={addArticle} />
       ) : (
-        <Articles articles={articles} />
+        <Articles articles={articles} setDirty={setDirty} />
       )}
     </div>
   );

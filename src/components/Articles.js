@@ -1,5 +1,8 @@
-import { deleteArticle } from "../services/articleService";
-export default function Articles({ articles }) {
+import { DateTime } from 'luxon'
+
+import { deleteArticle } from '../services/articleService'
+
+export default function Articles({ articles, setDirty }) {
   return (
     // <article>
     //   {articles.length === 0 ? (
@@ -28,9 +31,13 @@ export default function Articles({ articles }) {
     //   )}
     // </article>
     <div className="articles__container">
-      {articles.map((article) => {
-        console.log(article);
-        console.log(article.id);
+      {articles.map(article => {
+        const seconds = article.date.seconds
+        console.log('ARTICLES > article.date: ', article.date)
+        console.log('ARTICLES > typeof article.date: ', typeof article.date)
+
+        const dateString = DateTime.fromSeconds(seconds).toLocaleString(DateTime.DATETIME_MED)
+
         return (
           <div className="article__container">
             <div className="article__header">
@@ -38,18 +45,22 @@ export default function Articles({ articles }) {
               <div className="article__delete-icon">
                 <button
                   onClick={() => {
-                    deleteArticle(article.id);
+                    deleteArticle(article.id)
+
+                    // After we delete the article, the "view" is now "dirty" and needs to be refreshed
+                    // Setting dirty to true, will trigger the useEffect in the parent "App"
+                    setDirty(true)
                   }}
                 >
                   &#128465;
                 </button>
               </div>
             </div>
-            <div className="article__date">{`Posted: ${article.date}`}</div>
+            <div className="article__date">{`Posted: ${dateString}`}</div>
             <div className="article__body">{article.body}</div>
           </div>
-        );
+        )
       })}
     </div>
-  );
+  )
 }
