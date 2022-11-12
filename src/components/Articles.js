@@ -1,5 +1,5 @@
-import { deleteArticle } from "../services/articleService"
-export default function Article({ articles }) {
+import { deleteArticle } from "../services/articleService";
+export default function Articles({ articles }) {
   return (
     // <article>
     //   {articles.length === 0 ? (
@@ -27,31 +27,29 @@ export default function Article({ articles }) {
     //     </div>
     //   )}
     // </article>
-    <div className="displayArticle">
+    <div className="articles__container">
       {articles.map((article) => {
-        console.log(article)
-        console.log(article.id)
+        console.log(article);
+        console.log(article.id);
         return (
-          <div className = "article">
-            <div className = "title">
-              <h1>{article.title}</h1>
-              <div className="deletePost">
+          <div className="article__container">
+            <div className="article__header">
+              <h1 className="article__title">{article.title}</h1>
+              <div className="article__delete-icon">
                 <button
                   onClick={() => {
                     deleteArticle(article.id);
                   }}
                 >
-                  {" "}
                   &#128465;
                 </button>
               </div>
             </div>
-            <div className="date">{`Posted: ${article.date}`}</div>
-            <div className="body">{article.body}</div>
+            <div className="article__date">{`Posted: ${article.date}`}</div>
+            <div className="article__body">{article.body}</div>
           </div>
-        )
+        );
       })}
-
     </div>
   );
 }
