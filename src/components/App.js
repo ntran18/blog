@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-// import Nav from "./Nav";
 import Articles from './Articles'
 import ArticleEntry from './ArticleEntry'
 import { SignIn, SignOut, useAuthentication } from '../services/authService'
@@ -8,12 +7,9 @@ import './App.css'
 
 export default function App() {
   const [articles, setArticles] = useState([])
-  const [article, setArticle] = useState(null)
   const [writing, setWriting] = useState(false)
-
   // Anytime dirty is true, then it will trigger the fetch via the useEffect
   const [dirty, setDirty] = useState(true)
-
   const user = useAuthentication()
 
   // This is a trivial app, so just fetch all the articles only when
@@ -35,7 +31,6 @@ export default function App() {
   // two steps are definitely necessary.
   function addArticle({ title, body, author }) {
     createArticle({ title, body, author }).then(article => {
-      setArticle(article)
       setArticles([article, ...articles])
       setWriting(false)
     })
@@ -59,8 +54,6 @@ export default function App() {
         )}
         {!user ? <SignIn /> : <SignOut />}
       </header>
-
-      {/* {!user ? "" : <Nav articles={articles} setArticle={setArticle} />} */}
 
       {!user ? (
         ''
