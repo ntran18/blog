@@ -1,7 +1,16 @@
-# A Blog Starter App
+# An Interesting Blog App With FireBase 
 
-This is a trivial blog app, started with create-react-app.
+Developed from the starter code provided by Dr. Toal, worked with authentication and a database. 
 
-It works entirely within memory, so reloads blow everything away except for the first two mock articles.
+Improved Features:
 
-This repo is designed for you to fork and extend with (1) better CSS and (2) a real back end, with authentication and a database.
+- Read other people blog if signed in 
+- Delete blogs (only your own blog)
+- Go back to your homepage if you click on "Blog"
+- Display profile image
+- Display the author at the end of each blog 
+- Instead of clicking through each blog at a time, all the blogs will be displayed at once. 
+
+Got help from Masao and [Pedro Tech](https://youtu.be/zL0dKETbCNE)
+
+By: Maika Tran and Qingwen Zeng
