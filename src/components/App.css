@@ -1,7 +1,7 @@
 .App {
   display: grid;
-  grid-template-rows: min-content auto;
-  grid-template-columns: 250px auto;
+  grid-template-rows: 600px auto;
+  grid-template-columns: 300px auto;
   height: 100vh;
   overflow: scroll;
 }
@@ -10,16 +10,34 @@
 header {
   display: flex;
   justify-content: space-between;
-  background-color: black;
-  color: white;
   grid-column: 1 / span 2;
   padding: 10px 5px;
-  height: 50px;
-  align-items: center;
+  height: 100%;
+  align-items: end;
 }
+
+h4 {
+  color: rgb(95, 190, 249);
+  font-size: x-large;
+}
+
+.background {
+  position: relative;
+  left: 13%;
+  width: 53%;
+  height:90%;
+}
+
 
 .create__button {
   justify-content: center;
+  color: lightskyblue;
+  background-color: #89cff041;
+  border-color: white;
+  width: 8%;
+  height: 8%;
+  font-size: large;
+  
 }
 
 .profile__image {

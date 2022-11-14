@@ -4,6 +4,7 @@ import ArticleEntry from './ArticleEntry'
 import { SignIn, SignOut, useAuthentication } from '../services/authService'
 import { fetchArticles, createArticle } from '../services/articleService'
 import './App.css'
+import background from './background.jpg';
 
 export default function App() {
   const [articles, setArticles] = useState([])
@@ -47,6 +48,7 @@ export default function App() {
         >
           Blog
         </h4>
+        <img class= "background" src={background} alt = "background" />
         {user && (
           <button onClick={() => setWriting(true)} className="create__button">
             New Article
