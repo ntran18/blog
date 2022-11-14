@@ -4,7 +4,7 @@ import ArticleEntry from './ArticleEntry'
 import { SignIn, SignOut, useAuthentication } from '../services/authService'
 import { fetchArticles, createArticle } from '../services/articleService'
 import './App.css'
-import background from './background.jpg';
+import background from './background.jpg'
 
 export default function App() {
   const [articles, setArticles] = useState([])
@@ -40,21 +40,23 @@ export default function App() {
   return (
     <div className="App">
       <header>
-        <h4
-          onClick={() => {
-            setDirty(true)
-            setWriting(false)
-          }}
-        >
-          Blog
-        </h4>
-        <img class= "background" src={background} alt = "background" />
-        {user && (
-          <button onClick={() => setWriting(true)} className="create__button">
-            New Article
-          </button>
-        )}
-        {!user ? <SignIn /> : <SignOut />}
+        <div className="header__container">
+          <h4
+            onClick={() => {
+              setDirty(true)
+              setWriting(false)
+            }}
+          >
+            Blog
+          </h4>
+          {/* <img class= "background" src={background} alt = "background" /> */}
+          {user && (
+            <button onClick={() => setWriting(true)} className="create__button">
+              New Article
+            </button>
+          )}
+          {!user ? <SignIn className="signout__button" /> : <SignOut className="signout__button" />}
+        </div>
       </header>
 
       {!user ? (

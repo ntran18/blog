@@ -1,19 +1,32 @@
 .App {
   display: grid;
-  grid-template-rows: 600px auto;
-  grid-template-columns: 300px auto;
+  /* grid-template-rows: 600px auto;
+  grid-template-columns: 300px auto; */
   height: 100vh;
   overflow: scroll;
 }
 
 /*================ HEADER ================*/
 header {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.header__container {
+  border: 10px solid red;
   display: flex;
   justify-content: space-between;
-  grid-column: 1 / span 2;
   padding: 10px 5px;
+  align-items: start;
+  width: 50%;
   height: 100%;
-  align-items: end;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 h4 {
@@ -25,9 +38,8 @@ h4 {
   position: relative;
   left: 13%;
   width: 53%;
-  height:90%;
+  height: 90%;
 }
-
 
 .create__button {
   justify-content: center;
@@ -37,7 +49,6 @@ h4 {
   width: 8%;
   height: 8%;
   font-size: large;
-  
 }
 
 .profile__image {
@@ -106,7 +117,7 @@ form textarea {
   justify-content: flex-start;
   align-items: center;
   row-gap: 20px;
-  margin: 20px;
+  margin: 20px 0;
 }
 
 .article__container {
