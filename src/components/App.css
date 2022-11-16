@@ -1,9 +1,9 @@
 .App {
   display: grid;
-  /* grid-template-rows: 600px auto;
-  grid-template-columns: 300px auto; */
   height: 100vh;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: rgb(201, 230, 242);
 }
 
 /*================ HEADER ================*/
@@ -12,16 +12,16 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 70vh;
 }
 
 .header__container {
-  border: 10px solid red;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 10px 5px;
   align-items: start;
-  width: 50%;
+  width: 90%;
   height: 100%;
   background-image: url('background.jpg');
   background-size: cover;
@@ -30,25 +30,44 @@ header {
 }
 
 h4 {
-  color: rgb(95, 190, 249);
-  font-size: x-large;
-}
-
-.background {
-  position: relative;
-  left: 13%;
-  width: 53%;
-  height: 90%;
+  color: rgb(201, 230, 242);
+  font-size: 5vw;
 }
 
 .create__button {
-  justify-content: center;
+  /*justify-content: center;
   color: lightskyblue;
   background-color: #89cff041;
   border-color: white;
   width: 8%;
   height: 8%;
-  font-size: large;
+  font-size: large;*/
+  position: fixed;
+  /*from CSS Scan buttons design*/
+  background-color: rgb(45, 129, 162);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: whitesmoke;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Haas Grot Text R Web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 .profile__image {

@@ -49,16 +49,14 @@ export default function App() {
           >
             Blog
           </h4>
-          {/* <img class= "background" src={background} alt = "background" /> */}
+          {!user ? <SignIn className="signout__button" /> : <SignOut className="signout__button" />}
           {user && (
             <button onClick={() => setWriting(true)} className="create__button">
               New Article
             </button>
           )}
-          {!user ? <SignIn className="signout__button" /> : <SignOut className="signout__button" />}
         </div>
       </header>
-
       {!user ? (
         ''
       ) : writing ? (
