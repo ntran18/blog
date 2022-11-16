@@ -42,6 +42,7 @@ export default function App() {
       <header>
         <div className="header__container">
           <h4
+            className="blog__word"
             onClick={() => {
               setDirty(true)
               setWriting(false)
