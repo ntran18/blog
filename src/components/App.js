@@ -51,13 +51,15 @@ export default function App() {
             Blog
           </h4>
           {!user ? <SignIn className="signout__button" /> : <SignOut className="signout__button" />}
-          {user && (
-            <button onClick={() => setWriting(true)} className="create__button">
-              New Article
-            </button>
-          )}
         </div>
       </header>
+      <div className="New__Article">
+        {user && (
+          <button onClick={() => setWriting(true)} className="create__button">
+            New Article
+          </button>
+        )}
+      </div>
       {!user ? (
         ''
       ) : writing ? (
