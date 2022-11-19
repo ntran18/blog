@@ -30,11 +30,18 @@ header {
 }
 
 .blog__word {
-  color: rgb(201, 230, 242);
-  font-size: 5vw;
-  margin-block-start: 0.3em;
+  color: pink;
+  margin-block-start: 0.1vh;
   margin-block-end: 0vh;
   margin-left: 5px;
+  font-size: 10vw;
+  font-weight: bold;
+  font-family: HComic Sans MS;
+  text-shadow: 0 1px 0 rgb(228, 222, 223), 0 2px 0 rgb(186, 179, 180), 0 3px 0 rgb(216, 210, 211),
+    0 4px 0 rgb(205, 196, 197), 0 5px 0 whitesmoke, 0 6px 1px rgb(246, 115, 137, 0.1),
+    0 0 5px rgba(243, 116, 137, 0.1), 0 1px 3px rgba(246, 115, 137, 0.3),
+    0 3px 5px rgba(246, 115, 137, 0.2), 0 5px 10px rgba(246, 115, 137, 0.25),
+    0 10px 10px rgba(246, 115, 137, 0.2), 0 20px 20px rgba(246, 115, 137, 0.15);
 }
 
 .signOut__container {
@@ -74,13 +81,19 @@ header {
   border-radius: 8px;
   border-style: none;
   color: whitesmoke;
-  cursor: pointer;
-  font-family: 'Haas Grot Text R Web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: 500;
   height: 40px;
   line-height: 20px;
   padding: 10px 16px;
+  font-family: Consolas;
+  transition: ease-in 0.3s;
+}
+
+.create__button:hover {
+  cursor: pointer;
+  color: black;
+  box-shadow: inset 300px 0 0 0 pink;
 }
 
 /*================ ARTICLES ENTRY ================*/
@@ -112,11 +125,15 @@ form {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 60%;
+  height: 80%;
   background-color: skyblue;
-  color: white;
+  color: black;
+  font-family: Consolas;
   row-gap: 20px;
   margin-right: 8vw;
+  justify-content: space-between;
+  align-items: center;
 }
 
 form h2 {
@@ -124,20 +141,48 @@ form h2 {
 }
 
 .Create {
-  color: rgb(45, 167, 215);
+  color: black;
+  width: 30%;
+  border-color: palevioletred;
+  background-color: pink;
+  font-family: Consolas;
+  border-radius: 6px;
+  transition: ease-out 0.3s;
 }
 
-.article__inputs {
+.Create:hover {
+  cursor: pointer;
+  color: white;
+  box-shadow: inset 300px 0 0 0 palevioletred;
+}
+
+.title__body {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+}
+
+.article__inputs__title,
+.article__inputs__body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+label {
+  font-family: Consolas;
 }
 
 form input,
 form textarea {
   font-size: 18px;
   border: none;
-  border-radius: 2px;
+  border-radius: 8px;
   padding: 5px;
+  background-color: rgb(202, 228, 239);
 }
 
 /*================ ARTICLES ================*/
@@ -190,7 +235,7 @@ form textarea {
 }
 
 .error {
-  background-color: red;
-  color: gold;
+  background-color: midnightblue;
+  color: white;
   padding: 5px;
 }

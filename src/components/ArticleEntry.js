@@ -25,13 +25,15 @@ export default function ArticleEntry({ addArticle }) {
       <form onSubmit={submit}>
         {error && <p className="error">{error}</p>}
         <h2>Create An Article</h2>
-        <div className="article__inputs">
-          <label>Title:</label>
-          <input value={title} onChange={e => setTitle(e.target.value)} />
-        </div>
-        <div className="article__inputs">
-          <label>Body:</label>
-          <textarea rows="8" value={body} onChange={e => setBody(e.target.value)}></textarea>
+        <div className="title__body">
+          <div className="article__inputs__title">
+            <label>Title:</label>
+            <input value={title} onChange={e => setTitle(e.target.value)} />
+          </div>
+          <div className="article__inputs__body">
+            <label>Body:</label>
+            <textarea rows="16" value={body} onChange={e => setBody(e.target.value)}></textarea>
+          </div>
         </div>
         <button type="submit" className="Create">
           Create
