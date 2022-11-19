@@ -76,6 +76,7 @@ header {
   width: 100vw;
   display: grid;
   place-items: center;
+  padding-bottom: 20px;
 }
 
 form {
@@ -166,6 +167,7 @@ form textarea {
   justify-content: flex-start;
   align-items: center;
   row-gap: 20px;
+  padding-bottom: 20px;
 }
 
 .article__container {
