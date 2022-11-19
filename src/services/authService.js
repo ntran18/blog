@@ -4,18 +4,20 @@ import { auth } from '../firebaseConfig'
 
 export function SignIn() {
   return (
-    <button
-      className="auth__button"
-      onClick={() => signInWithPopup(auth, new GoogleAuthProvider())}
-    >
-      Sign In
-    </button>
+    <div className="auth__button-container flex">
+      <button
+        className="auth__button"
+        onClick={() => signInWithPopup(auth, new GoogleAuthProvider())}
+      >
+        Sign In
+      </button>
+    </div>
   )
 }
 
 export function SignOut() {
   return (
-    <div className="signOut__container">
+    <div className="auth__button-container flex">
       <img className="profile__image" src={auth.currentUser.photoURL} placeholder="profile image" />{' '}
       &nbsp;
       <button className="auth__button" onClick={() => signOut(auth)}>

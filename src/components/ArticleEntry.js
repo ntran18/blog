@@ -22,10 +22,10 @@ export default function ArticleEntry({ addArticle }) {
 
   return (
     <div className="article__entry">
-      <form onSubmit={submit}>
+      <form onSubmit={submit} className="flex">
         {error && <p className="error">{error}</p>}
         <h2>Create An Article</h2>
-        <div className="title__body">
+        <div className="title__body flex">
           <div className="article__inputs__title">
             <label>Title:</label>
             <input value={title} onChange={e => setTitle(e.target.value)} />
@@ -35,7 +35,7 @@ export default function ArticleEntry({ addArticle }) {
             <textarea rows="16" value={body} onChange={e => setBody(e.target.value)}></textarea>
           </div>
         </div>
-        <button type="submit" className="Create">
+        <button type="submit" className="create">
           Create
         </button>
       </form>

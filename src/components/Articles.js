@@ -4,17 +4,17 @@ import { deleteArticle } from '../services/articleService'
 
 export default function Articles({ articles, setDirty }) {
   return (
-    <div className="articles__container">
+    <div className="articles__container flex">
       {articles.map(article => {
         const seconds = article.date.seconds
         const dateString = DateTime.fromSeconds(seconds).toLocaleString(DateTime.DATETIME_MED)
         console.log('ARTICLES > article.author', article.author)
         console.log('ARTICLES > auth.currentUser.uid', auth.currentUser.uid)
         return (
-          <div className="article__container">
+          <div className="article__container flex">
             <div className="article__header">
               <h1 className="article__title">{article.title}</h1>
-              <div className="article__delete-icon">
+              <div className="article__delete-container flex">
                 {article.author.id === auth.currentUser.uid && (
                   <button
                     onClick={() => {

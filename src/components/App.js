@@ -4,7 +4,6 @@ import ArticleEntry from './ArticleEntry'
 import { SignIn, SignOut, useAuthentication } from '../services/authService'
 import { fetchArticles, createArticle } from '../services/articleService'
 import './App.css'
-import background from './background.jpg'
 
 export default function App() {
   const [articles, setArticles] = useState([])
@@ -22,7 +21,6 @@ export default function App() {
       fetchArticles()
         .then(setArticles)
         .then(() => {
-          console.log('FETCHED')
           setDirty(false)
         })
     }
@@ -39,8 +37,8 @@ export default function App() {
 
   return (
     <div className="App">
-      <header>
-        <div className="header__container">
+      <header className="flex">
+        <div className="header__container flex">
           <h4
             className="blog__word"
             onClick={() => {
@@ -50,22 +48,24 @@ export default function App() {
           >
             Blog
           </h4>
-          {!user ? <SignIn className="signout__button" /> : <SignOut className="signout__button" />}
+          {!user ? <SignIn /> : <SignOut />}
         </div>
       </header>
-      <div className="New__Article">
-        {user && (
-          <button onClick={() => setWriting(true)} className="create__button">
-            New Article
-          </button>
-        )}
-      </div>
       {!user ? (
         ''
       ) : writing ? (
         <ArticleEntry addArticle={addArticle} />
       ) : (
-        <Articles articles={articles} setDirty={setDirty} />
+        <div>
+          <div className="new__article-container">
+            {user && (
+              <button onClick={() => setWriting(true)} className="create__button">
+                New Article
+              </button>
+            )}
+          </div>
+          <Articles articles={articles} setDirty={setDirty} />
+        </div>
       )}
     </div>
   )
