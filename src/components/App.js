@@ -8,7 +8,7 @@ import './App.css'
 export default function App() {
   const [articles, setArticles] = useState([])
   const [writing, setWriting] = useState(false)
-  // Anytime dirty is true, then it will trigger the fetch via the useEffect
+  // Anytime dirty is true, then it will trigger the fetch via the useEffect - Credit: Masao
   const [dirty, setDirty] = useState(true)
   const user = useAuthentication()
 
@@ -57,7 +57,7 @@ export default function App() {
         <ArticleEntry addArticle={addArticle} />
       ) : (
         <div>
-          <div className="new__article-container">
+          <div className="new__article-container flex">
             {user && (
               <button onClick={() => setWriting(true)} className="create__button">
                 New Article

@@ -114,9 +114,8 @@ form h2 {
   row-gap: 10px;
 }
 
-.article__inputs__title,
-.article__inputs__body {
-  display: flex;
+.article__inputs-title-container,
+.article__inputs-body-container {
   flex-direction: column;
   width: 100%;
 }
@@ -139,7 +138,6 @@ form textarea {
 
 /*================ ARTICLES ================*/
 .new__article-container {
-  display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 0 30px 0;

@@ -26,11 +26,11 @@ export default function ArticleEntry({ addArticle }) {
         {error && <p className="error">{error}</p>}
         <h2>Create An Article</h2>
         <div className="title__body flex">
-          <div className="article__inputs__title">
+          <div className="article__inputs-title-container flex">
             <label>Title:</label>
             <input value={title} onChange={e => setTitle(e.target.value)} />
           </div>
-          <div className="article__inputs__body">
+          <div className="article__inputs-body-container">
             <label>Body:</label>
             <textarea rows="16" value={body} onChange={e => setBody(e.target.value)}></textarea>
           </div>
